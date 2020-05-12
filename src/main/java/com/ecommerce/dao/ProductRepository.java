@@ -1,11 +1,13 @@
-package com.ecommerce.repository;
+package com.ecommerce.dao;
 
-import com.ecommerce.domain.Product;
+import com.ecommerce.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-
+    Product findOne(Long id);
 }

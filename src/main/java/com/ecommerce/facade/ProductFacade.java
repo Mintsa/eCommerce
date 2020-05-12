@@ -1,26 +1,18 @@
 package com.ecommerce.facade;
 
-import com.ecommerce.domain.Product;
-import com.ecommerce.service.ProductService;
-import com.ecommerce.service.dto.ProductDto;
-import com.ecommerce.service.mapper.ProductMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ecommerce.dto.ProductDto;
+import com.ecommerce.entities.form.ProductForm;
 
 import java.util.List;
 
-public class ProductFacade {
+public interface ProductFacade {
 
-    @Autowired
-    ProductMapper productMapper;
+    List<ProductDto> products();
 
-    @Autowired
-    ProductService productService;
+    void saveProduct(ProductForm productForm);
 
 
-    public List<ProductDto> products(){
 
-        List<ProductDto> productDTOs = productMapper.productsToProductDTOs(productService.productList());
 
-        return productDTOs;
-    }
+
 }

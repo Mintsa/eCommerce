@@ -1,4 +1,4 @@
-package com.ecommerce.domain;
+package com.ecommerce.entities;
 
 
 import javax.persistence.*;
@@ -12,6 +12,13 @@ public class Product implements Serializable {
     public Product() {
     }
 
+
+    // I need this constructor for Test
+    public Product(Long id, @Size(min = 4, max = 20) String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
