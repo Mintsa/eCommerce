@@ -1,4 +1,4 @@
-package com.ecommerce.service.dto;
+package com.ecommerce.dto;
 
 import javax.persistence.Lob;
 import javax.validation.constraints.Size;
